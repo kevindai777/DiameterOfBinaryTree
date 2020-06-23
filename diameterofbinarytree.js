@@ -35,9 +35,8 @@ tree.addLeftNode(tree.root.left, 4)
 tree.addRightNode(tree.root.left, 5)
 
 
-//O(n) solution that dfs's through the tree and continuously updates
-//both the left and right height, and returns the max of both AND 
-//the path through the root.
+//O(n) solution that performs a dfs traversal through the tree and continuously updates
+//both the left and right height. It returns the max between both.
 
 let result = 0
 
@@ -46,6 +45,7 @@ function dfs(node) {
         return 0
     }
 
+    //These should update with +1 every single time a new node is passed
     let leftHeight = dfs(node.left)
     let rightHeight = dfs(node.right)
 
